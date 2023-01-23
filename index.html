@@ -1,9 +1,29 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<title>Countdown Timer</title>
+    <meta charset="utf-8">
+    <title>Countdown Timer</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hogan.js/3.0.2/hogan.min.js" integrity="sha512-F6j8lc1UBrmZHqUGreg4gNVVMCehTbf/LU0s/nnsQJYVeFSdpci+fcL48gsTd1Fbf08sD/kL+is2QiEssvJ70g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="js/index.js"></script>
+    <script src="js/timer.js"></script>
 </head>
 <body>
-<h1>Countdown Timer</h1>
+<div id="number">
+</div>
+<div id="timer">
+    <div id="disp_time"></div>
+    <form name="timer">
+        <input type="button" value="スタート" onclick="cntStart()">
+        <input type="button" value="ストップ" onclick="cntStop()">
+    </form>
+</div>
 </body>
+<script type="text/template" id="tpl_number">
+<h1>{{number}}</h1>
+</script>
+<script type="text/template" id="tpl_disp_time">
+{{talk_time}}
+</script>
 </html>
